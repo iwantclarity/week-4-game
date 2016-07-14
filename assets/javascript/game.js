@@ -1,7 +1,7 @@
 
   $( document ).ready(function() {
 
-    var numberToGuess = Math.floor(Math.random() * 120) + 19; //First set the number for the user to guess
+    var numberToGuess = 0; //First set the number for the user to guess
 
     var numbersOnCrystals = []; //Define the array to store the numbers for the crystals
 
@@ -11,14 +11,21 @@
         //The function makes sure that at the start and at the end of games the numbers are reset
         function NumberReset() {   
 
-        var numbersOnCrystals = [];
+        numberToGuess = 0;
+
+        numbersOnCrystals = [];        
 
         for (i=0; i < 4; i++) {
           var numberToArray = Math.floor(Math.random() * 12) + 1;
           numbersOnCrystals.push(numberToArray);
         }
 
+        numberToGuess = Math.floor(Math.random() * 120) + 19; 
+
+        $('#number').text(numberToGuess);
+
         counter = 0;
+
 
         $('#yourNumber').text(counter);
 
@@ -28,7 +35,7 @@
 
     console.log(numbersOnCrystals);
 
-    $('#number').text(numberToGuess);
+ 
 
     var picArray = ["assets/images/pic1.jpg", "assets/images/pic2.jpg", "assets/images/pic3.jpg","assets/images/pic4.jpg"];
 
@@ -56,9 +63,11 @@
         alert('You won!!!!');
         NumberReset();
 
+
       }else if( counter > numberToGuess){
         alert('You lost!');
-         NumberReset();
+        NumberReset();
+
       }
     });
 
