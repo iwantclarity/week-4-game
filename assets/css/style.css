@@ -1,0 +1,18 @@
+    .crystalImage {
+      width: 25%;
+      height: 25%;
+      cursor: pointer;
+    }
+
+    #number {
+      font-size: 45px;
+    }
+
+    #yourNumber {
+      font-size: 45px;
+
+    }
+    .lumberjack{
+     height: 250px;
+     margin-right: 40px;
+    }  
