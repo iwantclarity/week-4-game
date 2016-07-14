@@ -38,8 +38,8 @@ $(document).ready(function() {
 
     //Used to check if the array is updating
     // console.log(numbersOnCrystals);
-  
-
+    
+    //Prints the image with the necessary tags and data num
     for (var i = 0; i < numbersOnCrystals.length; i++) {
 
         var imageCrystal = $('<img>');
@@ -55,16 +55,20 @@ $(document).ready(function() {
         $('#crystals').append(imageCrystal);
     }
 
+
+    //Register clicks and adds num from data num to counter
     $('.crystalImage').on('click', function() {
         counter = counter + parseInt($(this).data('num'));
 
         $('#yourNumber').text(counter);
 
+
+        //Display if you win
         if (counter == numberToGuess) {
             alert('You won!!!!');
             NumberReset();
 
-
+        //Display if you lose    
         } else if (counter > numberToGuess) {
             alert('You lost!');
             NumberReset();
